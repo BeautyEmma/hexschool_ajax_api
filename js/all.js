@@ -3,7 +3,7 @@ $(function () {
     $('body').append(test);
     $.ajax({
         type: 'GET',
-        url: 'http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=ddb80380-f1b3-4f8e-8016-7ed9cba571d5',
+        url: 'data.json',
         success: function (data) {
             
             console.log('Load data Success, and the Type of data is : ' + typeof(data));
