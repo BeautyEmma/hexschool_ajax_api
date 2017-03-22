@@ -1,15 +1,17 @@
 $(function () {
     var test = 'Test if Append works';
-    $('body').append(test);
+    $('.wrap').append(test);
     $.ajax({
         type: 'GET',
         url: 'data.json',
+        async: true,
+        dataType: 'json',
         success: function (data) {
-            
-            console.log('Load data Success, and the Type of data is : ' + typeof(data));
+
+            console.log('Load data Success, and the Type of data is : ' + typeof (data));
 
             for (i = 0; data.length > i; i++) {
-            
+
                 var thisData = data;
                 var str;
                 var free = thisData[i].sarea;
@@ -17,10 +19,10 @@ $(function () {
                 if (free == '信義區') {
                     str = '<li>' + thisData[i].iid + '</li>';
                     $('body').append(str);
-                } 
-            }//end of for
+                }
+            } //end of for
             console.log('End of for');
-        }//end of success
+        } //end of success
     });
 
 });
