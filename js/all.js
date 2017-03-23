@@ -4,7 +4,7 @@ $(function () {
     $.ajax({
         type: 'GET',
         url: 'data.json',
-        async: true,
+        //async: true,
         dataType: 'json',
         success: function (data) {
 
