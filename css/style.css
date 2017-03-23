@@ -95,11 +95,10 @@ h1,h2{
 }
 
 .list{
-    width: 25%;
-    height: 500px;
+    width: 30%;
+    height: 600px;
     float: left;
     background-color: #aac9c9;
-    padding: 1em;
 }
 .list h3{
     text-align: center;
