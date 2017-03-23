@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>hw2</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  
-  <div class="wrap">
-      <h1>TEST</h1>
-      
-  </div>
-   
-   
+
+    <div class="wrap">
+        <div class="header">
+            <h1>高雄市立圖書館資訊</h1>
+            <h2>哪裡有圖書館?</h2>
+        </div>
+        <div class="geocode">
+            <h3>用區域找</h3>
+            <!--<div id="floating-panel">
+
+                <input id="address" type="textbox" value="">
+
+                <input type="button" value="Geocode">
+
+            </div>-->
+            <div id="map"></div>
+
+        </div>
+        <div class="list">
+            <h3>選擇區域</h3>
+            
+             <select id="dis">
+              <option value="楠梓區">楠梓區</option>
+              <option value="左營區">左營區</option>
+              <option value="鼓山區">鼓山區</option>
+              <option value="三民區">三民區</option>
+              <option value="苓雅區">苓雅區</option>
+              <option value="新興區">新興區</option>
+              <option value="前金區">前金區</option>
+              <option value="鹽埕區">鹽埕區</option>
+              <option value="前鎮區">前鎮區</option>
+              <option value="旗津區">旗津區</option>
+              <option value="小港區">小港區</option>
+            </select>
+            
+            <input type="button" value="搜尋" id="submit" class="search">
+            <div class="result">
+                <p>where am i </p>
+                <ul id="result"></ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/all.js"></script>
-    
-    
+
+    <!--    載入GoogleMaps key-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEnvFBYPZSOTiSRmAhy2aorkAQgSZGmPM">
+    </script>
 </body>
+
 </html>
 
 <!--
