@@ -14,9 +14,9 @@ $(function () {
 
                 var thisData = data;
                 var str;
-                var free = thisData[i].sarea;
+                var dis = thisData[i].sarea;
 
-                if (free == '信義區') {
+                if (dis == '信義區') {
                     str = '<li>' + thisData[i].iid + '</li>';
                     $('body').append(str);
                 }
