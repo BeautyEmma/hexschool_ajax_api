@@ -17,8 +17,8 @@ $(function () {
         e.preventDefault();
         $.ajax({
             type: 'GET',
-            async: true,
-            dataType: 'json',
+//            async: true,
+//            dataType: 'json',
             url: 'data.json',
             success: function (data) {
 
