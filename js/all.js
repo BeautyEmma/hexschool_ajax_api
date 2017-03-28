@@ -23,7 +23,8 @@ $(function () {
             type: 'GET',
             async: true,
             dataType: 'json',
-            url: 'http://opendata.khcc.gov.tw/public/OD_ksml_info.ashx',
+//            url: 'http://opendata.khcc.gov.tw/public/OD_ksml_info.ashx',
+            url: 'data.json',
             success: function (data) {
 
                 var dis = $('#dis').val();
