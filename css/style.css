@@ -1,5 +1,84 @@
 /*--------------reset開始------------------*/
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,,samp,small,strikestrong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embedfigure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+,
+samp,
+small,
+strikestrong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embedfigure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -11,7 +90,17 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* HTML5 display-role reset for older browsers */
 
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 
@@ -46,67 +135,228 @@ a {
     text-decoration: none;
 }
 
-body{
+body {
     font-family: 微軟正黑體;
     color: black;
 }
 
-input{
+input {
     border-style: none;
 }
 
+
 /*--------------reset結束------------------*/
-.wrap{
+
+.wrap {
     max-width: 90%;
     height: auto;
     margin: 0 auto;
-    border:1px solid blue;
+    border: 0px solid blue;
+    font-family: 微軟正黑體;
 }
-.header{
-    background-color: darkorange;
+
+.header {
+/*
+    background-image:-webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('http://ourgrandlife.com/wp-content/uploads/2016/04/o-PILE-OF-BOOKS-facebook.jpg');
+    background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('http://ourgrandlife.com/wp-content/uploads/2016/04/o-PILE-OF-BOOKS-facebook.jpg');
+    background-position: center;
+    background-size: cover;
+*/
+    background-color: #F6A800;
+    
+    height: 250px;
+    
+    color: black;
     padding: 1em;
 }
-h1,h2{
+
+.header h1,h2 {
     text-align: center;
+    margin-top: 4%;
+    font-weight: bold;
+}
+.header h3{
+    text-align: center;
+    font-size: 15px;
+}
+
+
+/*--------------choose選擇方式------------------*/
+
+.choose {
+    width: 100%;
+    height: 350px;
+    float: left;
+    
+    background-image: -webkit-linear-gradient(330deg, #fdfbfb 0%, #ebedee 100%);
+    
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    
+}
+
+.choose h2 {
+    color: black;
+}
+
+.choose h3 {
+    text-align: center;
+    font-size: 16px;
+}
+
+.way {
+    width: 20%;
+    float: left;
+    margin: 2% 5% 5% 7%;
+}
+
+.way h4 {
+    font-size: 22px;
+    text-align: center;
+}
+.way h5{
+    text-align: center;
+}
+
+.way a {
+    display: block;
+    text-align: center;
+}
+
+
+/*--------------location區域搜尋------------------*/
+
+.location {
+    width: 100%;
+    height: 920px;
+    float: left;
+/*
+    background-image: -webkit-linear-gradient(bottom, #accbee 0%, #e7f0fd 100%);
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+*/
+    background-color: #014656;
     color: white;
 }
 
-.geocode{
-    width: 70%;
-    background-color:azure; 
+.list {
+    width: 35%;
+    height: auto;
+    float: left;
+    padding: 1em;
+}
+
+.list h3 {
+    text-align: center;
+    color: #e2e2e2;
+    font-size: 16px;
+}
+
+#dis {
+    margin-left: 3%;
+    margin-right: 2%;
+    font-size: 18px;
+    font-family: 微軟正黑體;
+    color: black;
+}
+
+.fa {
+    margin-right: 10px;
+}
+
+.list h4 {
+    font-size: 22px;
+    font-family: 微軟正黑體;
+    margin: 5% 0 5% 10%;
+    font-weight: bold;
+}
+
+.list p {
+    font-size: 16px;
+    line-height: 25px;
+    margin-left: 10%;   
+    color: #e0dcdc;
+}
+
+hr{
+    color: white;
+    width: 60%;   
+}
+
+.geocode {
+    width: 65%;
+    /*    background-color:azure; */
     float: left;
 }
-.geocode h3{
+
+.geocode h3 {
     text-align: center;
 }
 
-#floating-panel{
-    margin-left: 40%;
+#map {
+    width: 90%;
+    height: 700px;
+    margin: 5% 0 0 5%;
+}
+
+
+/*--------------all全部地圖------------------*/
+
+.all {
+    width: 100%;
+    height: 1050px;
+    float: left;
+     
+    background-image: -webkit-linear-gradient(330deg, #fdfbfb 0%, #ebedee 100%);
+    
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.all h3 {
+    margin-top: 2%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.all h4{
+    text-align: center;
     margin-bottom: 2%;
-    width: 50%;
 }
-#address{
-    border: 1px solid black;
+
+#drop {
+    margin-left: 45%;
+    margin-bottom: 2%;
 }
-#map{
-    width: 800px;
-    height: 500px;
+
+#allmap {
+    width: 80%;
+    height: 800px;
     margin: auto;
 }
 
-.list{
-    width: 30%;
-    height: 600px;
+
+/*--------------self看自己附近------------------*/
+
+.self {
+    width: 100%;
+    height: 1000px;
+    background-color: #014656;
+    color: white;
     float: left;
-    background-color: #aac9c9;
 }
-.list h3{
+
+.self h3 {
+    margin-top: 2%;
     text-align: center;
+    font-size: 30px;
 }
-#dis{
-    margin-left: 20%;
-    font-size: 18px;
+.self h4{
+    text-align: center;
+    margin-bottom: 2%;
 }
-.result{
-    padding: 1em;
+
+#selfmap {
+    width: 80%;
+    height: 800px;
+    margin: auto;
+    color: black;
 }

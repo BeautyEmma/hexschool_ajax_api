@@ -5,31 +5,58 @@
     <meta charset="UTF-8">
     <title>hw2</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <!--    載入方歐森-->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    
+    <!--    載入bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    
+
 </head>
 
 <body>
 
     <div class="wrap">
+       
         <div class="header">
-            <h1>高雄市立圖書館資訊</h1>
+            <h1><i class="fa fa-book" aria-hidden="true"></i>高雄市立圖書館資訊</h1>
             <h2>哪裡有圖書館?</h2>
+            <h3>Where Can I Find Libraries?</h3>
         </div>
-        <div class="geocode">
-            <h3>用區域找</h3>
-            <!--<div id="floating-panel">
 
-                <input id="address" type="textbox" value="">
+        <div class="choose">
+            <h2>選擇搜尋方式</h2>
+            <h3>Choose the Way You Want to Search Libraries</h3>
 
-                <input type="button" value="Geocode">
+            <div class="way">
+                <h4>用區域找</h4>
+                <h5>Search by District</h5>
+                <a href="#dist" class="scrolltodistrict"><img src="img/magnify.png">
+                </a>
+            </div>
 
-            </div>-->
-            <div id="map"></div>
+            <div class="way">
+                <h4>看全部</h4>
+                <h5>See All</h5>
+                <a href="" class="scrolltoall"><img src="img/building.png"></a>
+            </div>
 
+            <div class="way">
+                <h4>看我附近的</h4>
+                <h5>Nearby</h5>
+                <a href="" class="scrolltoself"><img src="img/location.png">
+                </a>
+            </div>
         </div>
-        <div class="list">
-            <h3>選擇區域</h3>
-            
-             <select id="dis">
+
+        <div class="location" id="location">
+            <div class="list" id="#dist">
+                
+                <h3>選擇區域
+
+                <select id="dis">
               <option value="楠梓區">楠梓區</option>
               <option value="左營區">左營區</option>
               <option value="鼓山區">鼓山區</option>
@@ -42,12 +69,45 @@
               <option value="旗津區">旗津區</option>
               <option value="小港區">小港區</option>
             </select>
-            
-            <input type="button" value="搜尋" id="submit" class="search">
-            <div class="result">
-                <p>where am i </p>
-                <ul id="result"></ul>
+
+                <input type="button" value="搜尋" id="submit" class="search btn btn-warning ">
+<!--                <button value="搜尋" id="submit" class="search"></button>-->
+</h3>
+
+                <div class="result">
+                    <ul id="result"></ul>
+                </div>
+
+
+
             </div>
+
+            <div class="geocode">
+                <div id="map"></div>
+
+            </div>
+
+        </div>
+
+        <div class="all" id="all">
+           
+            <h3>看全部</h3>
+            <h4>See All</h4>
+            
+           
+            <div id="allpanel">
+                <button id="drop" class="btn btn-warning">下雨吧 ! Let it Rain !</button>
+            </div>
+            
+            <div id="allmap"></div>
+
+        </div>
+        
+        <div class="self" id="self">
+            <h3>看我附近的</h3>
+            <h4>Nearby</h4>
+            <div id="selfmap"></div>
+            
         </div>
 
 
@@ -56,6 +116,8 @@
 
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
 
     <!--    載入GoogleMaps key-->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEnvFBYPZSOTiSRmAhy2aorkAQgSZGmPM">
