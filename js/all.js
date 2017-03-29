@@ -1,6 +1,6 @@
 $(function () {
 
-    // bool for scroll function(only run 1 time)
+    // bool for scroll function(only run only 1 time)
     var a = true;
 
     //搜尋區
@@ -86,6 +86,7 @@ $(function () {
             }
         });
 
+        //座標們
         var neighborhoods = [
             {
                 lat: 22.6102344,
@@ -332,14 +333,16 @@ $(function () {
         var allmarkers = [];
 
         drop();
-
+        
+        //掉下來
         function drop() {
             clearMarkers();
             for (var i = 0; i < neighborhoods.length; i++) {
                 addMarkerWithTimeout(neighborhoods[i], i * 100);
             }
         }
-
+        
+        //延遲掉下來
         function addMarkerWithTimeout(position, timeout) {
             window.setTimeout(function () {
                 allmarkers.push(new google.maps.Marker({
@@ -349,7 +352,8 @@ $(function () {
                 }));
             }, timeout);
         }
-
+        
+        //清空原本的
         function clearMarkers() {
             for (var i = 0; i < allmarkers.length; i++) {
                 allmarkers[i].setMap(null);
@@ -380,7 +384,6 @@ $(function () {
             //Create SelfMap
             function initSelfMap() {
 
-                //設定中心.級數
                 var selfmap = new google.maps.Map(document.getElementById('selfmap'), {
                     center: {
                         lat: 22.6102344,
@@ -418,6 +421,7 @@ $(function () {
 
                 //start adding markers
 
+                //座標們
                 var locations = [
             {
                 lat: 22.6102344,
@@ -666,6 +670,7 @@ $(function () {
 
                 addselfmarkers();
 
+                //把標記都加上去
                 function addselfmarkers() {
                     for (var i = 0; i < locations.length; i++) {
                         selfmarkers.push(new google.maps.Marker({
@@ -686,6 +691,7 @@ $(function () {
         e.preventDefault();
     });
 
+    //超連結滾動區
     $('.scrolltoall').click(function (e) {
         $('html,body').animate({
             scrollTop: $('#all').offset().top
@@ -693,6 +699,7 @@ $(function () {
         e.preventDefault();
     });
 
+    //超連結滾動區
     $('.scrolltoself').click(function (e) {
         $('html,body').animate({
             scrollTop: $('#self').offset().top
@@ -701,17 +708,11 @@ $(function () {
     });
 
 
-
-
 }); // end of page load function
 
 
 
 /*
-
-var thisData = data;
-                //var thisData = JSON.parse(data);
-                //var thisData = jQuery.parseJSON(JSON.stringify(data));
 
 有開放
 高雄市立圖書館-分館資訊(沒經緯度 是地址)
