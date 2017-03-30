@@ -1,6 +1,6 @@
 $(function () {
 
-    // bool for scroll function(only run only 1 time)
+    // bool for scroll function(only run 1 time)
     var a = true;
 
     //搜尋區
@@ -23,8 +23,7 @@ $(function () {
             type: 'GET',
             async: true,
             dataType: 'json',
-//            url: 'http://opendata.khcc.gov.tw/public/OD_ksml_info.ashx',
-            url: 'data.json',
+            url: 'http://opendata.khcc.gov.tw/public/OD_ksml_info.ashx',
             success: function (data) {
 
                 var dis = $('#dis').val();
@@ -86,7 +85,6 @@ $(function () {
             }
         });
 
-        //座標們
         var neighborhoods = [
             {
                 lat: 22.6102344,
@@ -333,16 +331,14 @@ $(function () {
         var allmarkers = [];
 
         drop();
-        
-        //掉下來
+
         function drop() {
             clearMarkers();
             for (var i = 0; i < neighborhoods.length; i++) {
                 addMarkerWithTimeout(neighborhoods[i], i * 100);
             }
         }
-        
-        //延遲掉下來
+
         function addMarkerWithTimeout(position, timeout) {
             window.setTimeout(function () {
                 allmarkers.push(new google.maps.Marker({
@@ -352,8 +348,7 @@ $(function () {
                 }));
             }, timeout);
         }
-        
-        //清空原本的
+
         function clearMarkers() {
             for (var i = 0; i < allmarkers.length; i++) {
                 allmarkers[i].setMap(null);
@@ -375,7 +370,7 @@ $(function () {
                     lat: 22.6102344,
                     lng: 120.30174320000003
                 },
-                zoom: 15
+                zoom: 16
             });
 
             //Define SelfMap
@@ -384,12 +379,13 @@ $(function () {
             //Create SelfMap
             function initSelfMap() {
 
+                //設定中心.級數
                 var selfmap = new google.maps.Map(document.getElementById('selfmap'), {
                     center: {
                         lat: 22.6102344,
                         lng: 120.30174320000003
                     },
-                    zoom: 8
+                    zoom: 12
                 });
 
                 //Define infoWindow
@@ -402,6 +398,7 @@ $(function () {
 
                 // geolocation
                 if (navigator.geolocation) {
+                    console.log('geolocation work');
                     navigator.geolocation.getCurrentPosition(function (position) {
                         var pos = {
                             lat: position.coords.latitude,
@@ -409,7 +406,7 @@ $(function () {
                         };
 
                         infoWindow.setPosition(pos);
-                        infoWindow.setContent('Hi!I am here!');
+                        infoWindow.setContent('Hello!I am here!');
                         selfmap.setCenter(pos);
                     }, function () {
                         handleLocationError(true, infoWindow, map.getCenter());
@@ -419,249 +416,253 @@ $(function () {
                     handleLocationError(false, infoWindow, map.getCenter());
                 } // end of geolocation error else
 
+                function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent(browserHasGeolocation ? 'fail' : 'fail 2');
+                }
+
                 //start adding markers
 
-                //座標們
                 var locations = [
-            {
-                lat: 22.6102344,
-                lng: 120.30174320000003
+                    {
+                        lat: 22.6102344,
+                        lng: 120.30174320000003
             },
-            {
-                lat: 22.625524,
-                lng: 120.29801700000007
+                    {
+                        lat: 22.625524,
+                        lng: 120.29801700000007
             },
-            {
-                lat: 22.6544722,
-                lng: 120.27538600000003
+                    {
+                        lat: 22.6544722,
+                        lng: 120.27538600000003
             },
-            {
-                lat: 22.612094,
-                lng: 120.270848
+                    {
+                        lat: 22.612094,
+                        lng: 120.270848
             },
-            {
-                lat: 22.7152924,
-                lng: 120.29017169999997
+                    {
+                        lat: 22.7152924,
+                        lng: 120.29017169999997
             },
-            {
-                lat: 22.6733397,
-                lng: 120.28586270000005
+                    {
+                        lat: 22.6733397,
+                        lng: 120.28586270000005
             },
-            {
-                lat: 22.646393,
-                lng: 120.30613700000004
+                    {
+                        lat: 22.646393,
+                        lng: 120.30613700000004
             },
-            {
-                lat: 22.6310222,
-                lng: 120.30989269999998
+                    {
+                        lat: 22.6310222,
+                        lng: 120.30989269999998
             },
-            {
-                lat: 22.6272175,
-                lng: 120.30684289999999
+                    {
+                        lat: 22.6272175,
+                        lng: 120.30684289999999
             },
-            {
-                lat: 22.6267091,
-                lng: 120.28185329999997
+                    {
+                        lat: 22.6267091,
+                        lng: 120.28185329999997
             },
-            {
-                lat: 22.602476,
-                lng: 120.33300499999996
+                    {
+                        lat: 22.602476,
+                        lng: 120.33300499999996
             },
-            {
-                lat: 22.649382,
-                lng: 120.32496949999995
+                    {
+                        lat: 22.649382,
+                        lng: 120.32496949999995
             },
-            {
-                lat: 22.623302,
-                lng: 120.27304660000004
+                    {
+                        lat: 22.623302,
+                        lng: 120.27304660000004
             },
-            {
-                lat: 22.6185494,
-                lng: 120.29819659999998
+                    {
+                        lat: 22.6185494,
+                        lng: 120.29819659999998
             },
-            {
-                lat: 22.7267707,
-                lng: 120.30298500000004
+                    {
+                        lat: 22.7267707,
+                        lng: 120.30298500000004
             },
-            {
-                lat: 22.643485,
-                lng: 120.34231999999997
+                    {
+                        lat: 22.643485,
+                        lng: 120.34231999999997
             },
-            {
-                lat: 22.7334902,
-                lng: 120.32788260000007
+                    {
+                        lat: 22.7334902,
+                        lng: 120.32788260000007
             },
-            {
-                lat: 22.6784039,
-                lng: 120.307816
+                    {
+                        lat: 22.6784039,
+                        lng: 120.307816
             },
-            {
-                lat: 22.5605891,
-                lng: 120.37057579999998
+                    {
+                        lat: 22.5605891,
+                        lng: 120.37057579999998
             },
-            {
-                lat: 22.6257981,
-                lng: 120.31813999999997
+                    {
+                        lat: 22.6257981,
+                        lng: 120.31813999999997
             },
-            {
-                lat: 22.797164,
-                lng: 120.29287999999997
+                    {
+                        lat: 22.797164,
+                        lng: 120.29287999999997
             },
-            {
-                lat: 22.7832758,
-                lng: 120.29827090000003
+                    {
+                        lat: 22.7832758,
+                        lng: 120.29827090000003
             },
-            {
-                lat: 22.79337,
-                lng: 120.36208690000001
+                    {
+                        lat: 22.79337,
+                        lng: 120.36208690000001
             },
-            {
-                lat: 22.7571744,
-                lng: 120.30523549999998
+                    {
+                        lat: 22.7571744,
+                        lng: 120.30523549999998
             },
-            {
-                lat: 22.760493,
-                lng: 120.26696219999997
+                    {
+                        lat: 22.760493,
+                        lng: 120.26696219999997
             },
-            {
-                lat: 22.7627019,
-                lng: 120.24460499999998
+                    {
+                        lat: 22.7627019,
+                        lng: 120.24460499999998
             },
-            {
-                lat: 22.7854904,
-                lng: 120.2464377
+                    {
+                        lat: 22.7854904,
+                        lng: 120.2464377
             },
-            {
-                lat: 22.8159528,
-                lng: 120.22440030000007
+                    {
+                        lat: 22.8159528,
+                        lng: 120.22440030000007
             },
-            {
-                lat: 22.9061936,
-                lng: 120.18048950000002
+                    {
+                        lat: 22.9061936,
+                        lng: 120.18048950000002
             },
-            {
-                lat: 22.855732,
-                lng: 120.258375
+                    {
+                        lat: 22.855732,
+                        lng: 120.258375
             },
-            {
-                lat: 22.9065626,
-                lng: 120.22347330000002
+                    {
+                        lat: 22.9065626,
+                        lng: 120.22347330000002
             },
-            {
-                lat: 22.8797259,
-                lng: 120.33327540000005
+                    {
+                        lat: 22.8797259,
+                        lng: 120.33327540000005
             },
-            {
-                lat: 22.8719806,
-                lng: 120.35943580000003
+                    {
+                        lat: 22.8719806,
+                        lng: 120.35943580000003
             },
-            {
-                lat: 22.5966662,
-                lng: 120.3542215
+                    {
+                        lat: 22.5966662,
+                        lng: 120.3542215
             },
-            {
-                lat: 22.5894331,
-                lng: 120.32732910000004
+                    {
+                        lat: 22.5894331,
+                        lng: 120.32732910000004
             },
-            {
-                lat: 22.627077,
-                lng: 120.35717199999999
+                    {
+                        lat: 22.627077,
+                        lng: 120.35717199999999
             },
-            {
-                lat: 22.6247642,
-                lng: 120.36343549999992
+                    {
+                        lat: 22.6247642,
+                        lng: 120.36343549999992
             },
-            {
-                lat: 22.6911944,
-                lng: 120.43093550000003
+                    {
+                        lat: 22.6911944,
+                        lng: 120.43093550000003
             },
-            {
-                lat: 22.6576795,
-                lng: 120.41753340000002
+                    {
+                        lat: 22.6576795,
+                        lng: 120.41753340000002
             },
-            {
-                lat: 22.7292785,
-                lng: 120.44386800000007
+                    {
+                        lat: 22.7292785,
+                        lng: 120.44386800000007
             },
-            {
-                lat: 22.7014802,
-                lng: 120.34790240000007
+                    {
+                        lat: 22.7014802,
+                        lng: 120.34790240000007
             },
-            {
-                lat: 22.6803194,
-                lng: 120.34467689999997
+                    {
+                        lat: 22.6803194,
+                        lng: 120.34467689999997
             },
-            {
-                lat: 22.7317397,
-                lng: 120.34730439999998
+                    {
+                        lat: 22.7317397,
+                        lng: 120.34730439999998
             },
-            {
-                lat: 22.6623284,
-                lng: 120.36251560000005
+                    {
+                        lat: 22.6623284,
+                        lng: 120.36251560000005
             },
-            {
-                lat: 22.6041588,
-                lng: 120.39340979999997
+                    {
+                        lat: 22.6041588,
+                        lng: 120.39340979999997
             },
-            {
-                lat: 22.637313,
-                lng: 120.40208440000004
+                    {
+                        lat: 22.637313,
+                        lng: 120.40208440000004
             },
-            {
-                lat: 22.5088476,
-                lng: 120.39479540000002
+                    {
+                        lat: 22.5088476,
+                        lng: 120.39479540000002
             },
-            {
-                lat: 22.487031,
-                lng: 120.39497059999997
+                    {
+                        lat: 22.487031,
+                        lng: 120.39497059999997
             },
-            {
-                lat: 22.888642,
-                lng: 120.48349000000007
+                    {
+                        lat: 22.888642,
+                        lng: 120.48349000000007
             },
-            {
-                lat: 22.9001721,
-                lng: 120.54186070000003
+                    {
+                        lat: 22.9001721,
+                        lng: 120.54186070000003
             },
-            {
-                lat: 23.083777,
-                lng: 120.58771649999994
+                    {
+                        lat: 23.083777,
+                        lng: 120.58771649999994
             },
-            {
-                lat: 22.917091,
-                lng: 120.45522000000005
+                    {
+                        lat: 22.917091,
+                        lng: 120.45522000000005
             },
-            {
-                lat: 22.936826,
-                lng: 120.46179890000008
+                    {
+                        lat: 22.936826,
+                        lng: 120.46179890000008
             },
-            {
-                lat: 22.9753469,
-                lng: 120.46780460000002
+                    {
+                        lat: 22.9753469,
+                        lng: 120.46780460000002
             },
-            {
-                lat: 22.9816879,
-                lng: 120.49986650000005
+                    {
+                        lat: 22.9816879,
+                        lng: 120.49986650000005
             },
-            {
-                lat: 22.9743924,
-                lng: 120.54160139999999
+                    {
+                        lat: 22.9743924,
+                        lng: 120.54160139999999
             },
-            {
-                lat: 22.9962618,
-                lng: 120.63471959999993
+                    {
+                        lat: 22.9962618,
+                        lng: 120.63471959999993
             },
-            {
-                lat: 22.7397261,
-                lng: 120.2498349
+                    {
+                        lat: 22.7397261,
+                        lng: 120.2498349
             },
-            {
-                lat: 22.5830043,
-                lng: 120.31971210000006
+                    {
+                        lat: 22.5830043,
+                        lng: 120.31971210000006
             },
-            {
-                lat: 22.6633972,
-                lng: 120.31557429999998
+                    {
+                        lat: 22.6633972,
+                        lng: 120.31557429999998
             }
         ];
 
@@ -670,7 +671,6 @@ $(function () {
 
                 addselfmarkers();
 
-                //把標記都加上去
                 function addselfmarkers() {
                     for (var i = 0; i < locations.length; i++) {
                         selfmarkers.push(new google.maps.Marker({
@@ -691,7 +691,6 @@ $(function () {
         e.preventDefault();
     });
 
-    //超連結滾動區
     $('.scrolltoall').click(function (e) {
         $('html,body').animate({
             scrollTop: $('#all').offset().top
@@ -699,7 +698,6 @@ $(function () {
         e.preventDefault();
     });
 
-    //超連結滾動區
     $('.scrolltoself').click(function (e) {
         $('html,body').animate({
             scrollTop: $('#self').offset().top
@@ -708,11 +706,17 @@ $(function () {
     });
 
 
+
+
 }); // end of page load function
 
 
 
 /*
+
+var thisData = data;
+                //var thisData = JSON.parse(data);
+                //var thisData = jQuery.parseJSON(JSON.stringify(data));
 
 有開放
 高雄市立圖書館-分館資訊(沒經緯度 是地址)
